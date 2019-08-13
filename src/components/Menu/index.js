@@ -5,8 +5,8 @@ class Menu extends Component {
   render() {
     return (
       <>
-         <BtnA type='button'>All Promotions</BtnA>
-         <BtnN type='button'>New Customers</BtnN>
+         <BtnA onClick={this.handleClickAll} type='button'>All Promotions</BtnA>
+         <BtnN onClick={this.handleClickNew} type='button'>New Customers</BtnN>
       </>
     );
   }
