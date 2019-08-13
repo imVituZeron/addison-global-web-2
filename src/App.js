@@ -1,14 +1,12 @@
 import React from 'react';
-import Menu from './components/Menu/index';
-import Promotions from './components/Promotions/index';
+import Wrapper from './components/Wrapper/index';
 
 import Styled from 'styled-components';
 
 function App() {
   return (
     <Page>
-      <Menu />
-      <Promotions />
+      <Wrapper />
     </Page>
   );
 }

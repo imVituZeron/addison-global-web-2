@@ -1,38 +1,17 @@
 import React, { Component } from 'react';
 import Styled from 'styled-components';
-import api from '../../services/api';
 
 class Promotions extends Component {
 
-   state = {
-      // promotions ta armazenando os dados da api
-      promotions: [],
-   }
-
-   componentDidMount() {
-      // serve para executar o metodo ou component assim que ele aparece
-      this.loadApi();
-   }
-
-   loadApi = async () => {
-      const response = await api.get('/');
-      // o response ta recebendo o metodo get da api 
-      this.setState({ promotions: response.data }); 
-      // promotions recebendo os dados da response.date
-   }
-
    render() {
-      const { promotions }= this.state;
       return (
          <>
-            { promotions.map((promo) => (
-               <Promo> 
-                  <h1 key={ promo._id}>{ promo.name }</h1>
-                  <p>{ promo.description }</p>
-                  <button>{ promo.termsAndConditionsButtonText }</button>
-                  <button className='btn-join'>{ promo.joinNowButtonText }</button>
-               </Promo>
-            ))}
+            <Promo> 
+               <h1> Promotion test</h1>
+               <p> descriptin</p>
+               <button>btn-1</button>
+               <button className='btn-join'>btn-2</button>
+            </Promo>
          </>
       );
    }
