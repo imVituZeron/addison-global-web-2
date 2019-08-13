@@ -4,9 +4,12 @@ import Menu from '../Menu/index';
 import Promotions from '../Promotions/index';
 
 class Wrapper extends Component {
+   constructor(props){
+      super(props);
 
-   state = {
-      promotions: [],
+      this.state= {
+         promotions: [],
+      }
    }
 
    componentDidMount() {
@@ -19,13 +22,23 @@ class Wrapper extends Component {
       // o response ta recebendo o metodo get da api 
       this.setState({ promotions: response.data }); 
       // promotions recebendo os dados da response.date
-      console.log(response.data)
+      console.log(this.state.promotions);
+   }
+   
+   thisNew = () => {
+      const { promotions } = this.state;
+
+      const newPromo = promotions.filter(item => {
+         return item.onlyNewCustomers === true;
+      })
+      console.log(newPromo);
+      
    }
 
    render() {
       return (
          <>
-            <Menu />
+            <Menu handleClickNew={this.thisNew}/>
             <Promotions />
          </>
       )

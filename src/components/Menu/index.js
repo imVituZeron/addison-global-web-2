@@ -6,7 +6,7 @@ class Menu extends Component {
     return (
       <>
          <BtnA onClick={this.handleClickAll} type='button'>All Promotions</BtnA>
-         <BtnN onClick={this.handleClickNew} type='button'>New Customers</BtnN>
+         <BtnN onClick={this.props.handleClickNew} type='button'>New Customers</BtnN>
       </>
     );
   }
